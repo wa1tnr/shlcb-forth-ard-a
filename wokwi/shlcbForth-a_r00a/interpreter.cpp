@@ -1,4 +1,4 @@
-// Sat  5 Mar 14:39:41 UTC 2022
+// Sat  5 Mar 14:51:03 UTC 2022
 
 /* Tiny interpreter,
    similar to myforth's Standalone Interpreter
@@ -48,7 +48,7 @@ int pop() {
 }
 
 /* Global delay timer */
-int spd = 15;
+int spd = 50; // 15;
 
 /* top of stack becomes current spd */
 NAMED(_speed, "speed");
@@ -177,9 +177,11 @@ void wiggle() {
   pinMode(a, OUTPUT);
   for (int i = 0; i < 20; i++) {
     digitalWrite(a, HIGH);
-    delay(100);
+    // delay(100);
+    delay(spd);
     digitalWrite(a, LOW);
-    delay(100);
+    delay((spd * 4));
+    // delay(100);
   }
 }
 
