@@ -1,1 +1,37 @@
-Sat  5 Mar 12:45:37 UTC 2022
+{
+  "version": 1,
+  "author": "Anonymous maker",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-arduino-uno", "id": "uno", "top": 0, "left": 0, "attrs": {} },
+    {
+      "type": "wokwi-led",
+      "id": "led1",
+      "top": -118.8,
+      "left": 120,
+      "attrs": { "color": "blue" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led2",
+      "top": -118.8,
+      "left": 168,
+      "attrs": { "color": "purple" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led3",
+      "top": -118.8,
+      "left": 216,
+      "attrs": { "color": "orange" }
+    }
+  ],
+  "connections": [
+    [ "uno:2", "led3:A", "orange", [ "v-57", "h3.5" ] ],
+    [ "uno:3", "led2:A", "purple", [ "v-57", "h-35" ] ],
+    [ "uno:4", "led1:A", "blue", [ "v-47.4", "h-63.9" ] ],
+    [ "uno:GND.1", "led1:C", "black", [ "v-66.6", "h-0.3" ] ],
+    [ "uno:GND.1", "led2:C", "black", [ "v-66.6", "h66.9", "v-19.2" ] ],
+    [ "uno:GND.1", "led3:C", "black", [ "v-66.6", "h114.9" ] ]
+  ]
+}
