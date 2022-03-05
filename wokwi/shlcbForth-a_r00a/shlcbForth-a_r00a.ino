@@ -1,4 +1,4 @@
-// Sat  5 Mar 14:02:07 UTC 2022
+// Sat  5 Mar 14:14:16 UTC 2022
 
 #if 0
     [ https://wokwi.com/arduino/projects/325294489810764371 ]
@@ -67,8 +67,8 @@ Serial.print(aba);
 // tib[1] = '\0';
 
 
-if (flagged) { runword(); flagged = false; }
-// runword(); // may crash!
+// if (flagged) { runword(); flagged = false; }
+runword(); // may crash!
 
 
 
