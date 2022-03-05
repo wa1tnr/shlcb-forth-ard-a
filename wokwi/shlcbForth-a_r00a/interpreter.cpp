@@ -1,4 +1,4 @@
-// Sat  5 Mar 14:51:03 UTC 2022
+// Sat  5 Mar 15:00:15 UTC 2022
 
 /* Tiny interpreter,
    similar to myforth's Standalone Interpreter
@@ -401,6 +401,7 @@ void setup_interpreter() {
   // Serial.begin(9600);
   // while (!Serial);
   Serial.println ("Forth-like interpreter:");
+  Serial.println ("\n3 output 3 wiggle - press ENTER instead of using spacebar.");
   words();
   Serial.println();
 }
