@@ -39,7 +39,30 @@ void orange(bool on) {
 
 // Sat  5 Mar 10:50:44 UTC 2022
 
+// extern char tib[maxtib];
+
+extern const byte maxtib;
+extern char tib[];
+
+// extern char tib[];
+
 void readStr(char* inStr) {
+
+// inStr is the feeder string
+
+int aba=strlen(inStr);
+
+memcpy(tib, inStr, aba); // hum
+tib[(aba - 0)] = '\0';
+
+Serial.print("gotcha: ");
+Serial.print(tib);
+Serial.print(" hadya:  ");
+Serial.print(aba);
+// tib[0] = '\0';
+// tib[1] = '\0';
+
+#if 0
     Serial.print("command : ");
     Serial.println(inStr);
     lwrCase(inStr);
@@ -60,6 +83,7 @@ void readStr(char* inStr) {
     // did not understand what was typed:
     Serial.println("Look, its color on or color off.");
     Serial.println("Or maybe, all on, or, all off. Try again.");
+#endif
 }
 
 
@@ -114,13 +138,15 @@ void readStr(char* inStr) {
 
 #endif
 
+extern void setup_interpreter(void); // interpreter.cpp
 void setup(void) {
     Serial.begin(115200);
-    Serial.println("What light shall we turn on or off?");
+    // Serial.println("What light shall we turn on or off?");
     pinMode(orangeLED,OUTPUT);
     pinMode(purpleLED,OUTPUT);
     pinMode(blueLED,OUTPUT);
     comReader.setCallback(readStr);
+    setup_interpreter();
 }
 
 void loop(void) { idle(); }
