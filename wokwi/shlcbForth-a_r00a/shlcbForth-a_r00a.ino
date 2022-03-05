@@ -1,4 +1,4 @@
-// Sat  5 Mar 14:14:16 UTC 2022
+// Sat  5 Mar 14:39:04 UTC 2022
 
 #if 0
     [ https://wokwi.com/arduino/projects/325294489810764371 ]
@@ -43,14 +43,14 @@ void orange(bool on) {
 
 extern const byte maxtib;
 extern char tib[];
-
-// extern char tib[];
-
 extern void runword(); // interpreter.cpp
 
-bool flagged = true;
+unsigned long global_iteration_counter;
+
+// bool flagged = true;
 
 void readStr(char* inStr) {
+
 
 // inStr is the feeder string
 
@@ -59,19 +59,28 @@ int aba=strlen(inStr);
 memcpy(tib, inStr, aba); // hum
 tib[(aba - 0)] = '\0';
 
-Serial.print("gotcha: ");
-Serial.print(tib);
-Serial.print(" hadya:  ");
-Serial.print(aba);
+// #if 0
+// Serial.print("gotcha: ");
+// Serial.print(tib);
+// Serial.print(" hadya:  ");
+// Serial.print(aba);
 // tib[0] = '\0';
 // tib[1] = '\0';
-
+// #endif
 
 // if (flagged) { runword(); flagged = false; }
-runword(); // may crash!
 
+// readword() functionality: echo acquired string:
+if (tib[0] == 0) { } else {
+    Serial.print(tib);
+    Serial.print(' ');
+}
 
+runword();
 
+global_iteration_counter++;
+Serial.print("counter: ");
+Serial.println(global_iteration_counter);
 
 
 #if 0
