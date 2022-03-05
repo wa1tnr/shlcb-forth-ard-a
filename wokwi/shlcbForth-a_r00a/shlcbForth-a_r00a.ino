@@ -1,5 +1,8 @@
-// Sat  5 Mar 12:59:24 UTC 2022
-// https://wokwi.com/arduino/projects/325294489810764371
+// Sat  5 Mar 13:02:54 UTC 2022
+
+#if 0
+    [ https://wokwi.com/arduino/projects/325294489810764371 ]
+#endif
 
 #include <serialStr.h>
 #include <strTools.h>
@@ -9,15 +12,6 @@
 #define orangeLED 2
 
 serialStr  comReader;
-
-void setup() {
-  Serial.begin(115200);
-  Serial.println("What light shall we turn on or off?");
-  pinMode(orangeLED,OUTPUT);
-  pinMode(purpleLED,OUTPUT);
-  pinMode(blueLED,OUTPUT);
-  comReader.setCallback(readStr);
-}
 
 void blue(bool on) {
   if (on) {
@@ -120,5 +114,15 @@ void readStr(char* inStr) {
 
 #endif
 
-void loop( void ) { idle(); }
+void setup(void) {
+    Serial.begin(115200);
+    Serial.println("What light shall we turn on or off?");
+    pinMode(orangeLED,OUTPUT);
+    pinMode(purpleLED,OUTPUT);
+    pinMode(blueLED,OUTPUT);
+    comReader.setCallback(readStr);
+}
+
+void loop(void) { idle(); }
+
 // END.
