@@ -46,6 +46,10 @@ extern char tib[];
 
 // extern char tib[];
 
+extern void runword(); // interpreter.cpp
+
+bool flagged = true;
+
 void readStr(char* inStr) {
 
 // inStr is the feeder string
@@ -61,6 +65,14 @@ Serial.print(" hadya:  ");
 Serial.print(aba);
 // tib[0] = '\0';
 // tib[1] = '\0';
+
+
+if (flagged) { runword(); flagged = false; }
+// runword(); // may crash!
+
+
+
+
 
 #if 0
     Serial.print("command : ");
