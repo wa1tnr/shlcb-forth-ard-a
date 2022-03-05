@@ -1,3 +1,5 @@
+// Sat  5 Mar 13:22:52 UTC 2022
+
 /* Tiny interpreter,
    similar to myforth's Standalone Interpreter
    This example code is in the public domain */
@@ -381,15 +383,17 @@ void runword() {
 
 /* Arduino main loop */
 
-void setup() {
-  Serial.begin(9600);
-  while (!Serial);
+void setup_interpreter() {
+  // Serial.begin(9600);
+  // while (!Serial);
   Serial.println ("Forth-like interpreter:");
   words();
   Serial.println();
 }
 
-void loop() {
+void loop_interpreter() {
   readword();
   runword();
 }
+
+// END.
