@@ -1,4 +1,4 @@
-// Sat  5 Mar 14:01:44 UTC 2022
+// Sat  5 Mar 14:38:15 UTC 2022
 
 /* Tiny interpreter,
    similar to myforth's Standalone Interpreter
@@ -160,6 +160,8 @@ void dotShex() {
 NAMED(_dotS, ".s");
 void dotS() {
   for (int i = 0; i < STKSIZE; i++) dot();
+  // KLUDGE 05 March 2022:
+  Serial.print('\n');
 }
 
 /* delay TOS # of milliseconds */
@@ -371,6 +373,8 @@ void old_readword() {
 void readword() {
   // comment
   // tib = inStr; // real simple here
+  Serial.print(tib);
+  Serial.print(' ');
 }
 
 /* Run a word via its name */
