@@ -359,12 +359,18 @@ byte reading() {
 
 /* Block on reading the command line from serial port */
 /* then echo each word */
-void readword() {
+void old_readword() {
   pos = 0;
   tib[0] = 0;
   while (reading());
   Serial.print(tib);
   Serial.print(" ");
+}
+
+
+void readword() {
+  // comment
+  // tib = inStr; // real simple here
 }
 
 /* Run a word via its name */
