@@ -1,8 +1,10 @@
-// Sat  5 Mar 13:22:52 UTC 2022
+// Sat  5 Mar 13:27:06 UTC 2022
 
 /* Tiny interpreter,
    similar to myforth's Standalone Interpreter
    This example code is in the public domain */
+
+#include <Arduino.h>
 
 /* Structure of a dictionary entry */
 typedef struct {
