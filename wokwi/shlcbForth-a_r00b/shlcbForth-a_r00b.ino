@@ -1,4 +1,5 @@
-// Sun  6 Mar 01:34:51 UTC 2022 OFFLINE edit
+// Sun  6 Mar 01:48:17 UTC 2022 ONLINE edit - no tib echo bug fixed.
+// TESTED briefly online.
 
 // chasseur at best with 42196
 
@@ -87,8 +88,9 @@ void readStr(char* inStr) {
               Serial.print(tib);
               Serial.print(' ');
               #endif
- 
- 
+
+              Serial.print(tib);
+              Serial.print(' ');
  
               runword();
               tib[pos] = '\0';
@@ -136,6 +138,9 @@ void readStr(char* inStr) {
               tib[pos] = '\0';
               // pos++;
               // tib[pos] = '\0';
+              Serial.print(tib);
+              Serial.println(' '); // end of line
+
               runword();
           }
         }
