@@ -1,7 +1,9 @@
 // Sun  6 Mar 01:22:45 UTC 2022
 
+// chasseur at best with 42196
+
 #if 0
-    [ https://wokwi.com/arduino/projects/325294489810764371 ]
+    [ https://wokwi.com/projects/325338912889242196 ] chasseur 01:27z Sunday
 #endif
 
 #include <serialStr.h>
@@ -50,61 +52,99 @@ unsigned long global_iteration_counter;
 // bool flagged = true;
 
 void readStr(char* inStr) {
+    int i = 0;
+    int pos = 0;
+    int counted = 0; // -1 very late change 00:07z
+    // Serial.println(" xx hello yy  ");
+    tib[pos] = '\0';
 
 
-// inStr is the feeder string
 
-int aba=strlen(inStr);
+    while(inStr[i]) {
+        counted++;
+        #if 0
+        Serial.print("  it is:  ");
+        Serial.print(i);
+        Serial.print("  ");
+        Serial.print(inStr[i]);
+        Serial.print("  ");
+        #endif
 
-memcpy(tib, inStr, aba); // hum
-tib[(aba - 0)] = '\0';
+        if (inStr[i] == '\r' ||
+            inStr[i] == '\n' ||
+            inStr[i] == ' ') {
+              i++; // very late change 00:02z
+              counted++; // even later change 00:09z
+              #if 0
+              Serial.println("  OKTHISOK  ");
+              Serial.print(" length tib is: ");
+              #endif
+              int lenTib = strlen(tib);
+              #if 0
+              Serial.print(lenTib);
+              Serial.print("  ");
+              Serial.print(" entire tib is: ");
+              Serial.print(tib);
+              Serial.print(' ');
+              #endif
+ 
+ 
+ 
+              runword();
+              tib[pos] = '\0';
+              pos = 0;
+                // tib[i] = inStr[i++];
+                // tib[i] = '\0';
+            }
+        if(inStr[i]) {
 
-// #if 0
-// Serial.print("gotcha: ");
-// Serial.print(tib);
-// Serial.print(" hadya:  ");
-// Serial.print(aba);
-// tib[0] = '\0';
-// tib[1] = '\0';
-// #endif
+          if (inStr[i] == ' ') Serial.println("TRAP");
 
-// if (flagged) { runword(); flagged = false; }
+          // Serial.print(" even more i  ");
+          tib[pos++] = inStr[i]; i++;
+          tib[pos] = '\0';
+          #if 0
 
-// readword() functionality: echo acquired string:
-if (tib[0] == 0) { } else {
-    Serial.print(tib);
-    Serial.print(' ');
-}
+          Serial.print(" incremental tib: ");
+          Serial.print(tib);
+          Serial.print(' ');
+          #endif
 
-runword();
-
-global_iteration_counter++;
-Serial.print("counter: ");
-Serial.println(global_iteration_counter);
-
-
-#if 0
-    Serial.print("command : ");
-    Serial.println(inStr);
-    lwrCase(inStr);
-
-    if (!strcmp(inStr,"blue on"))    { blue(true);    return; }
-    if (!strcmp(inStr,"blue off"))   { blue(false);   return; }
-    if (!strcmp(inStr,"purple on"))  { purple(true);  return; }
-    if (!strcmp(inStr,"purple off")) { purple(false); return; }
-    if (!strcmp(inStr,"orange on"))  { orange(true);  return; }
-    if (!strcmp(inStr,"orange off")) { orange(false); return; }
-
-    if (!strcmp(inStr,"all on")) {
-        blue(true); purple(true); orange(true); return;
+          // runword();
+          // Serial.println("   LOWER DECK  ");
+          int finLen = strlen(inStr); // finLen--;
+          #if 0
+          Serial.print("  finLen: ");
+          Serial.print(finLen);
+          Serial.print(" ");
+          Serial.print("  counted: ");
+          Serial.print(counted);
+          Serial.print("  ");
+          #endif
+          if (finLen == counted) {
+            #if 0
+              Serial.print("  last tib is: ");
+              Serial.print(tib);
+              
+              Serial.print("  ");
+              Serial.print("  pos is: ");
+              Serial.print(pos);
+              Serial.print("  tib[pos]: ");
+              Serial.print(tib[(pos-1)]);
+              Serial.print("  ");
+              #endif
+              tib[pos] = '\0';
+              // pos++;
+              // tib[pos] = '\0';
+              runword();
+          }
+        }
+        // tib[0] = '\0';
+        // iterate when tib has more than one word in it
     }
-    if (!strcmp(inStr,"all off")) {
-        blue(false); purple(false); orange(false); return;
-    }
-    // did not understand what was typed:
-    Serial.println("Look, its color on or color off.");
-    Serial.println("Or maybe, all on, or, all off. Try again.");
-#endif
+    global_iteration_counter++;
+    Serial.print("counter: ");
+    Serial.println(global_iteration_counter);
 }
 
 
