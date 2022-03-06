@@ -1,9 +1,9 @@
-// Sun  6 Mar 01:22:45 UTC 2022
+// Sun  6 Mar 01:34:51 UTC 2022 OFFLINE edit
 
 // chasseur at best with 42196
 
 #if 0
-    [ https://wokwi.com/projects/325338912889242196 ] chasseur 01:27z Sunday
+    [ https://wokwi.com/projects/325338912889242196 ] chasseur 01:34z Sunday 6 March
 #endif
 
 #include <serialStr.h>
