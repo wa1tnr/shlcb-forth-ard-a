@@ -1,4 +1,4 @@
-// Sun  6 Mar 02:16:32 UTC 2022 OFFLINE edit - bounceback
+// Sun  6 Mar 02:32:12 UTC 2022 ONLINE edit - captured from wokwi
 
 // thanks to jim lee / Left Coast
 
@@ -6,6 +6,9 @@
 
 #if 0
     [ https://wokwi.com/projects/325338912889242196 ] chasseur 01:34z Sunday 6 March
+
+github:
+    [ https://github.com/wa1tnr/shlcb-forth-ard-a ]
 #endif
 
 #include <serialStr.h>
