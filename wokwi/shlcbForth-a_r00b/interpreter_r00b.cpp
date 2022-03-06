@@ -1,5 +1,7 @@
 // Sun  6 Mar 01:22:45 UTC 2022
 
+// companion update to previous commit
+
 /* Tiny interpreter,
    similar to myforth's Standalone Interpreter
    This example code is in the public domain */
@@ -401,7 +403,9 @@ void setup_interpreter() {
   // Serial.begin(9600);
   // while (!Serial);
   Serial.println ("Forth-like interpreter:");
-  Serial.println ("\n3 output 3 wiggle - press ENTER instead of using spacebar.");
+  // Serial.println ("\n3 output 3 wiggle - press ENTER instead of using spacebar.");
+  Serial.println ("\nTEST:  3 output 3 wiggle\n");
+
   words();
   Serial.println();
 }
