@@ -1,6 +1,4 @@
-// Sun  6 Mar 01:34:30 UTC 2022 OFFLINE edit
-
-// companion update to previous commit
+// Sun  6 Mar 02:16:32 UTC 2022 OFFLINE edit - bounceback
 
 /* Tiny interpreter,
    similar to myforth's Standalone Interpreter

@@ -1,5 +1,4 @@
-// Sun  6 Mar 02:14:02 UTC 2022 ONLINE edit - no tib echo bug fixed.
-// TESTED briefly online.
+// Sun  6 Mar 02:16:32 UTC 2022 OFFLINE edit - bounceback
 
 // thanks to jim lee / Left Coast
 
