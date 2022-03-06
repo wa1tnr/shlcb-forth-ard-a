@@ -1,5 +1,7 @@
-// Sun  6 Mar 01:48:17 UTC 2022 ONLINE edit - no tib echo bug fixed.
+// Sun  6 Mar 02:14:02 UTC 2022 ONLINE edit - no tib echo bug fixed.
 // TESTED briefly online.
+
+// thanks to jim lee / Left Coast
 
 // chasseur at best with 42196
 
